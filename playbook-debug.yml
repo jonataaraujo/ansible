@@ -1,0 +1,21 @@
+---
+- name: Check release
+  hosts: all
+  gather_facts: false
+
+  tasks:
+
+    - name: Check ansible
+      shell: ansible --version
+
+    - name: Check ansible collection
+      shell: ansible-galaxy collection list
+
+    - name: Check python
+      shell: python -V
+
+    - name: Check pip
+      shell: pip list
+
+    - name: Check S.O
+      shell: hostnamectl
